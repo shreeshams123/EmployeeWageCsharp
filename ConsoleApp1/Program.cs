@@ -4,22 +4,11 @@ namespace ConsoleApp1
 {
     internal class EmployeeWageCompute
     {
-        public static void Main(string[] args)
+       public void ComputeDailyWage()
         {
-            Console.WriteLine("Welcome to the main page of Employee Wage");
-        }
-       public void CheckAttendance()
-        {
-            Random r = new Random();
-            int isPresent = r.Next(0,2);
-            if (isPresent == 0)
-            {
-                Console.WriteLine("Employee is absent");
-            }
-            else if (isPresent == 1)
-            {
-                Console.WriteLine("Employee is present");
-            }
+            int wageperhour = 20;
+            int dailyhour = 8;
+            Console.WriteLine("Daily wage is"+wageperhour*dailyhour);
         }
     }
 }
