@@ -6,34 +6,36 @@ namespace ConsoleApp1
     {
 
 
-        public static void Main(string[] args)
+        public void Caluculatewageswitch()
         {
-            Console.WriteLine("Welcome to the main page of Employee Wage");
-            EmployeeWageCompute e = new EmployeeWageCompute();
-            e.CheckAttendance();
-        }
-        public void CheckAttendance()
-        {
-            Random r = new Random();
-            int isPresent = r.Next(0, 2);
-            if (isPresent == 0)
-            {
-                Console.WriteLine("Employee is absent");
-            }
-            else if (isPresent == 1)
-            {
-                Console.WriteLine("Employee is present");
-            }
-        }
-
-        public void ComputeDailyWage()
-        {
+            int isfulltime = 0;
+            int isparttime = 1;
             int wageperhour = 20;
-            int dailyhour = 8;
-            Console.WriteLine("Daily wage is" + wageperhour * dailyhour);
+            int fullhour = 8;
+            int parthour = 4;
+            int wage = 0;
+            string res;
+           
+            
+            Random r = new Random();
+            int checkemp = r.Next(0, 2);
+
+            switch (checkemp)
+            {
+                case 0: wage = wageperhour * fullhour; break;
+                case 1: wage= wageperhour * parthour;break;
+            }
+            if (checkemp == 0)
+            {
+                res = "Full Time Employee";
+            }
+            else
+            {
+                res = "Part time Employee";
+            }
+            Console.WriteLine("Wage for " + res + " is " + wage);
 
         }
-
     }
 }
 
