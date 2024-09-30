@@ -4,36 +4,24 @@ namespace ConsoleApp1
 {
     internal class EmployeeWageCompute
     {
-
-
-        public static void Main(string[] args)
+        static int Wageperhour = 20;
+        static int Fulltimehour1 = 8;
+        static int Parttimehour1 = 4;
+        static int isfulltime1 = 0;
+        static int isparttime1 = 1;
+        static void ComputeWage()
         {
-            Console.WriteLine("Welcome to the main page of Employee Wage");
-            EmployeeWageCompute e = new EmployeeWageCompute();
-            e.CheckAttendance();
-        }
-        public void CheckAttendance()
-        {
-            Random r = new Random();
-            int isPresent = r.Next(0, 2);
-            if (isPresent == 0)
+           Random random = new Random();
+            int checkemp1=random.Next(0,2);
+            if (checkemp1 == 0)
             {
-                Console.WriteLine("Employee is absent");
+                Console.WriteLine("Wage is " + Wageperhour * Fulltimehour1);
             }
-            else if (isPresent == 1)
+            else
             {
-                Console.WriteLine("Employee is present");
+                Console.WriteLine("Wage is " + Wageperhour * Parttimehour1);
             }
         }
-
-        public void ComputeDailyWage()
-        {
-            int wageperhour = 20;
-            int dailyhour = 8;
-            Console.WriteLine("Daily wage is" + wageperhour * dailyhour);
-
-        }
-
     }
 }
 
