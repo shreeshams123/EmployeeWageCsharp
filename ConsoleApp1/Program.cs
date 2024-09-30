@@ -1,39 +1,33 @@
 using System;
+using System.Xml.Schema;
 
 namespace ConsoleApp1
 {
     internal class EmployeeWageCompute
     {
 
-
-        public static void Main(string[] args)
+        public void MonthlyWage()
         {
-            Console.WriteLine("Welcome to the main page of Employee Wage");
-            EmployeeWageCompute e = new EmployeeWageCompute();
-            e.CheckAttendance();
-        }
-        public void CheckAttendance()
-        {
-            Random r = new Random();
-            int isPresent = r.Next(0, 2);
-            if (isPresent == 0)
+            int isfulltime = 0;
+            int isparttime = 1;
+            int NoOfDays = 20;
+            int emphour=0;
+            int totalwage = 0;
+            for (int i = 0; i < NoOfDays; i++)
             {
-                Console.WriteLine("Employee is absent");
+                Random r = new Random();
+                int emptype = r.Next(0, 2);
+                switch (emptype)
+                {
+                    case 0:
+                        emphour = 8;
+                        break;
+                    case 1: emphour = 4; break;
+                }
+                totalwage += emphour;
             }
-            else if (isPresent == 1)
-            {
-                Console.WriteLine("Employee is present");
-            }
+            Console.WriteLine("Total wage is " + totalwage);
         }
-
-        public void ComputeDailyWage()
-        {
-            int wageperhour = 20;
-            int dailyhour = 8;
-            Console.WriteLine("Daily wage is" + wageperhour * dailyhour);
-
-        }
-
     }
 }
 
