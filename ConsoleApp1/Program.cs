@@ -4,34 +4,28 @@ namespace ConsoleApp1
 {
     internal class EmployeeWageCompute
     {
-
-
-        public static void Main(string[] args)
+        public void OnCondition()
         {
-            Console.WriteLine("Welcome to the main page of Employee Wage");
-            EmployeeWageCompute e = new EmployeeWageCompute();
-            e.CheckAttendance();
-        }
-        public void CheckAttendance()
-        {
-            Random r = new Random();
-            int isPresent = r.Next(0, 2);
-            if (isPresent == 0)
+            int totalhours = 0;
+            int totaldays = 0;
+            int maxhours = 100;
+            int maxdays = 20;
+            int isFullTime = 0;
+            int isPartTime = 1;
+            int emphour = 0;
+            while(totalhours< maxhours && totaldays < maxdays)
             {
-                Console.WriteLine("Employee is absent");
+                totaldays++;
+                Random r=new Random();
+                int checkhour = r.Next(0, 2);
+                switch (checkhour)
+                {
+                    case 0: emphour = 8; break;
+                    case 1: emphour = 4; break;
+                }
+                totalhours += emphour;
             }
-            else if (isPresent == 1)
-            {
-                Console.WriteLine("Employee is present");
-            }
-        }
-
-        public void ComputeDailyWage()
-        {
-            int wageperhour = 20;
-            int dailyhour = 8;
-            Console.WriteLine("Daily wage is" + wageperhour * dailyhour);
-
+            Console.WriteLine("Total wage is" + totalhours);
         }
 
     }
