@@ -4,9 +4,18 @@ namespace ConsoleApp1
 {
     internal class EmployeeWageCompute
     {
-        static void Main(string[] args)
+       public void CheckAttendance()
         {
-            Console.WriteLine("Welcome to the employee wage page");
+            Random r = new Random();
+            int isPresent = r.Next(0,2);
+            if (isPresent == 0)
+            {
+                Console.WriteLine("Employee is absent");
+            }
+            else if (isPresent == 1)
+            {
+                Console.WriteLine("Employee is present");
+            }
         }
     }
 }
