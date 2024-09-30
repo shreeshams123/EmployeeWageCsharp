@@ -4,9 +4,11 @@ namespace ConsoleApp1
 {
     internal class EmployeeWageCompute
     {
-        public static void Main(string[] args)
+        public void ComputePertTimeWage()
         {
-            Console.WriteLine("Welcome to the main page of Employee Wage");
+            int parttimehour = 4;
+            int wageperhoue = 20;
+            Console.WriteLine("Part time wage is" + parttimehour * wageperhoue);
         }
        
     }
