@@ -6,11 +6,20 @@ namespace ConsoleApp1
     {
 
 
+
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the main page of Employee Wage");
             EmployeeWageCompute e = new EmployeeWageCompute();
             e.CheckAttendance();
+        }
+
+        public void ComputePartTimeWage()
+        {
+            int parttimehour = 4;
+            int wageperhour = 20;
+            Console.WriteLine("Part time wage is" + parttimehour * wageperhour);
+
         }
         public void CheckAttendance()
         {
