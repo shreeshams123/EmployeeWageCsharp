@@ -25,7 +25,7 @@ namespace ConsoleApp1
                 }
                 totalhours += emphour;
             }
-            Console.WriteLine("Total wage is" + totalhours);
+            Console.WriteLine("Total wage is" + totalhours*20);
         }
 
     }
