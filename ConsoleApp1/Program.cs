@@ -5,13 +5,38 @@ namespace ConsoleApp1
 {
     internal class EmployeeWageCompute
     {
-
-
+        
+       
+        static int Wageperhour = 20;
+        static int Fulltimehour1 = 8;
+        static int Parttimehour1 = 4;
+        static int isfulltime1 = 0;
+        static int isparttime1 = 1;
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the main page of Employee Wage");
             EmployeeWageCompute e = new EmployeeWageCompute();
+            ComputeWage();
+            e.Caluculatewageswitch();
             e.CheckAttendance();
+            e.ComputePartTimeWage();
+            e.ComputeDailyWage();
+            e.MonthlyWage();
+            e.OnCondition();
+        }
+        static void ComputeWage()
+        {
+            Random random = new Random();
+            int checkemp1 = random.Next(0, 2);
+            if (checkemp1 == 0)
+            {
+                Console.WriteLine("Wage is " + Wageperhour * Fulltimehour1);
+            }
+            else
+            {
+                Console.WriteLine("Wage is " + Wageperhour * Parttimehour1);
+            }
+
         }
         public void Caluculatewageswitch()
         {
@@ -63,15 +88,16 @@ namespace ConsoleApp1
             Random r = new Random();
             int isPresent = r.Next(0, 2);
             if (isPresent == 0)
-            {
+            { 
                 Console.WriteLine("Employee is absent");
             }
             else if (isPresent == 1)
-                    {
-                        Console.WriteLine("Employee is present");
+            {
+                Console.WriteLine("Employee is present");
 
-                    }
+            }
         }
+
 
         public void OnCondition()
         {
@@ -126,6 +152,9 @@ namespace ConsoleApp1
             
 
         }
+
+           
+
     }
 }
 
