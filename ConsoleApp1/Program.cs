@@ -5,7 +5,7 @@ namespace ConsoleApp1
 {
     internal class EmployeeWageCompute
     {
-<<<<<<< HEAD
+
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the main page of Employee Wage");
@@ -69,9 +69,10 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("Employee is present");
 
+            } 
+        }
 
 
-=======
 
         public void MonthlyWage()
         {
@@ -92,7 +93,7 @@ namespace ConsoleApp1
                     case 1: emphour = 4; break;
                 }
                 totalwage += emphour;
->>>>>>> UC5-MonthlyWage
+
             }
             Console.WriteLine("Total wage is " + totalwage);
         }
