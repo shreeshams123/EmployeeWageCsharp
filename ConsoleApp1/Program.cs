@@ -6,6 +6,7 @@ namespace ConsoleApp1
     internal class EmployeeWageCompute
     {
 
+
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the main page of Employee Wage");
@@ -66,15 +67,40 @@ namespace ConsoleApp1
                 Console.WriteLine("Employee is absent");
             }
             else if (isPresent == 1)
-            {
-                Console.WriteLine("Employee is present");
+                    {
+                        Console.WriteLine("Employee is present");
 
-            } 
+                    }
+        }
+
+        public void OnCondition()
+        {
+            int totalhours = 0;
+            int totaldays = 0;
+            int maxhours = 100;
+            int maxdays = 20;
+            int isFullTime = 0;
+            int isPartTime = 1;
+            int emphour = 0;
+            while (totalhours < maxhours && totaldays < maxdays)
+
+            {
+                totaldays++;
+                Random r = new Random();
+                int checkhour = r.Next(0, 2);
+                switch (checkhour)
+                {
+                    case 0: emphour = 8; break;
+                    case 1: emphour = 4; break;
+                }
+                totalhours += emphour;
+            }
+            Console.WriteLine("Total wage is" + totalhours * 20);
         }
 
 
 
-        public void MonthlyWage()
+            public void MonthlyWage()
         {
             int isfulltime = 0;
             int isparttime = 1;
@@ -96,6 +122,9 @@ namespace ConsoleApp1
 
             }
             Console.WriteLine("Total wage is " + totalwage);
+
+            
+
         }
     }
 }
